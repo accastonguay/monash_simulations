@@ -1,0 +1,971 @@
+<DynaMind>
+	<Info Version="0.5"/>
+<DynaMindCore>
+	<Settings>
+		<EPSG value="32755"/>
+		<WorkingDir value="/tmp/dynamind"/>
+		<KeepSystems value="0"/>
+	</Settings>
+	<Nodes>
+		<RootNode>
+			<UUID value="0"/>
+		</RootNode>
+		<Node>
+			<ClassName value="GDALHotStarter"/>
+			<UUID value="34927408"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="hot_start_database">
+				<![CDATA[../../../../parcel_suitability/Monash/flow_accumulation.sqlite]]>
+			</parameter>
+			<Filter>
+			<view_name>
+				<![CDATA[]]>
+			</view_name>
+			<attribtue_filter>
+				<![CDATA[]]>
+			</attribtue_filter>
+			<spatial_filter>
+				<![CDATA[]]>
+			</spatial_filter>
+			</Filter>
+		</Node>
+		<Node>
+			<ClassName value="DMContainerGroup"/>
+			<UUID value="34764416"/>
+			<Name value="probabilities from MNL"/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="inStreams">
+				<![CDATA[in*|*]]>
+			</parameter>
+			<parameter name="outStreams">
+				<![CDATA[out*|*]]>
+			</parameter>
+			<parameter name="parameterConfig">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="DM_SQliteCalculator"/>
+			<UUID value="35240176"/>
+			<Name value=""/>
+			<GroupUUID value="34764416"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.prob_wetland]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[DOUBLE]]>
+			</parameter>
+			<parameter name="query">
+				<![CDATA[UPDATE parcel SET prob_wetland =     exp(-4.3119e+00 + (-3.7514e-01*groundwater) +(-2.1493e-03*near_dist)+(5.9246e-05*area)+(-1.3984e+02*imperviousness_percentage))/
+(1+     exp(-6.8479e+00 + (-1.1438e-01*groundwater) +(-1.0030e-03*near_dist)+(4.4805e-05*area)+(7.2431e-01*imperviousness_percentage))+
+exp(-4.4852e+00 + (-1.5509e-01*groundwater) +(-2.4683e-03*near_dist)+(4.4397e-05*area)+(-3.2310e+01*imperviousness_percentage))+
+    exp(-4.3119e+00 + (-3.7514e-01*groundwater) +(-2.1493e-03*near_dist)+(5.9246e-05*area)+(-1.3984e+02*imperviousness_percentage)))]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="DM_SQliteCalculator"/>
+			<UUID value="35572224"/>
+			<Name value=""/>
+			<GroupUUID value="34764416"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.prob_pond]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[DOUBLE]]>
+			</parameter>
+			<parameter name="query">
+				<![CDATA[UPDATE parcel SET prob_pond =     exp(-4.4852e+00 + (-1.5509e-01*groundwater) +(-2.4683e-03*near_dist)+(4.4397e-05*area)+(-3.2310e+01*imperviousness_percentage))/
+(1+     exp(-6.8479e+00 + (-1.1438e-01*groundwater) +(-1.0030e-03*near_dist)+(4.4805e-05*area)+(7.2431e-01*imperviousness_percentage))+
+exp(-4.4852e+00 + (-1.5509e-01*groundwater) +(-2.4683e-03*near_dist)+(4.4397e-05*area)+(-3.2310e+01*imperviousness_percentage))+
+    exp(-4.3119e+00 + (-3.7514e-01*groundwater) +(-2.1493e-03*near_dist)+(5.9246e-05*area)+(-1.3984e+02*imperviousness_percentage)))]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="DM_SQliteCalculator"/>
+			<UUID value="35530448"/>
+			<Name value=""/>
+			<GroupUUID value="34764416"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.prob_rg]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[DOUBLE]]>
+			</parameter>
+			<parameter name="query">
+				<![CDATA[UPDATE parcel SET prob_rg =     exp(-6.8479e+00 + (-1.1438e-01*groundwater) +(-1.0030e-03*near_dist)+(4.4805e-05*area)+(7.2431e-01*imperviousness_percentage))/
+(1+     exp(-6.8479e+00 + (-1.1438e-01*groundwater) +(-1.0030e-03*near_dist)+(4.4805e-05*area)+(7.2431e-01*imperviousness_percentage))+
+exp(-4.4852e+00 + (-1.5509e-01*groundwater) +(-2.4683e-03*near_dist)+(4.4397e-05*area)+(-3.2310e+01*imperviousness_percentage))+
+    exp(-4.3119e+00 + (-3.7514e-01*groundwater) +(-2.1493e-03*near_dist)+(5.9246e-05*area)+(-1.3984e+02*imperviousness_percentage)))]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="DMContainerGroup"/>
+			<UUID value="34928256"/>
+			<Name value="remove unused layers"/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="inStreams">
+				<![CDATA[in*|*]]>
+			</parameter>
+			<parameter name="outStreams">
+				<![CDATA[out*|*]]>
+			</parameter>
+			<parameter name="parameterConfig">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="GDALRemoveComponets"/>
+			<UUID value="35494976"/>
+			<Name value=""/>
+			<GroupUUID value="34928256"/>
+			<DebugMode value="0"/>
+			<parameter name="view_name">
+				<![CDATA[building]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="GDALRemoveComponets"/>
+			<UUID value="34772832"/>
+			<Name value=""/>
+			<GroupUUID value="34928256"/>
+			<DebugMode value="0"/>
+			<parameter name="view_name">
+				<![CDATA[parcel]]>
+			</parameter>
+			<Filter>
+			<view_name>
+				<![CDATA[parcel]]>
+			</view_name>
+			<attribtue_filter>
+				<![CDATA[city_id = 0 or council_id is NULL]]>
+			</attribtue_filter>
+			<spatial_filter>
+				<![CDATA[]]>
+			</spatial_filter>
+			</Filter>
+		</Node>
+		<Node>
+			<ClassName value="GDALRemoveComponets"/>
+			<UUID value="35490144"/>
+			<Name value=""/>
+			<GroupUUID value="34928256"/>
+			<DebugMode value="0"/>
+			<parameter name="view_name">
+				<![CDATA[parcel_center]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="GDALRemoveComponets"/>
+			<UUID value="35241472"/>
+			<Name value=""/>
+			<GroupUUID value="34928256"/>
+			<DebugMode value="0"/>
+			<parameter name="view_name">
+				<![CDATA[zoning]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="DMContainerGroup"/>
+			<UUID value="35246144"/>
+			<Name value="remove unused zones"/>
+			<GroupUUID value="34928256"/>
+			<DebugMode value="0"/>
+			<parameter name="inStreams">
+				<![CDATA[in*|*]]>
+			</parameter>
+			<parameter name="outStreams">
+				<![CDATA[out*|*]]>
+			</parameter>
+			<parameter name="parameterConfig">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="GDALRemoveComponets"/>
+			<UUID value="35525088"/>
+			<Name value=""/>
+			<GroupUUID value="35246144"/>
+			<DebugMode value="0"/>
+			<parameter name="view_name">
+				<![CDATA[parcel]]>
+			</parameter>
+			<Filter>
+			<view_name>
+				<![CDATA[parcel]]>
+			</view_name>
+			<attribtue_filter>
+				<![CDATA[zone_code != 'B1Z'  and zone_code !=   'B2Z'  and zone_code !=   'B3Z'  and zone_code !=   'C1Z'  and zone_code !=   'C2Z'  and zone_code !=   'CDZ1'  and zone_code !=   'GRZ1'  and zone_code !=   'GRZ2'  and zone_code !=   'GRZ3'  and zone_code !=   'GWAZ1'  and zone_code !=   'IN1Z'  and zone_code !=   'LDRZ'  and zone_code !=   'MUZ'  and zone_code !=   'NRZ3'  and zone_code !=   'PCRZ'  and zone_code !=   'PPRZ'  and zone_code !=   'PUZ1'  and zone_code !=   'PUZ4'  and zone_code !=   'PUZ6'  and zone_code !=   'R1Z'  and zone_code !=   'RDZ1'  and zone_code !=   'RDZ2'  and zone_code !=   'RGZ1'  and zone_code !=   'SUZ1'  and zone_code !=   'SUZ2'  and zone_code !=   'UFZ']]>
+			</attribtue_filter>
+			<spatial_filter>
+				<![CDATA[]]>
+			</spatial_filter>
+			</Filter>
+		</Node>
+		<Node>
+			<ClassName value="GDALRemoveComponets"/>
+			<UUID value="35827968"/>
+			<Name value=""/>
+			<GroupUUID value="35246144"/>
+			<DebugMode value="0"/>
+			<parameter name="view_name">
+				<![CDATA[parcel]]>
+			</parameter>
+			<Filter>
+			<view_name>
+				<![CDATA[parcel]]>
+			</view_name>
+			<attribtue_filter>
+				<![CDATA[lu_desc != 'Community Service Facilities or Other' and lu_desc != 'Detached Home' and lu_desc != 'Member Club Facility'  and lu_desc !=   'Nature Reserve' and lu_desc != 'Outdoor Sports - Extended Areas / Cross Country' and lu_desc != 'Plant / Tree Nursery'  and lu_desc !=  'Protected Seascape - Public'  and lu_desc != 'Reserved Land' and lu_desc != 'Residential Development Site' and lu_desc != 'Road Void'    and lu_desc !=  'Unclassified Private Land' and lu_desc != 'Unspecified - Transport, Storage, Utilities and Communication' and lu_desc != 'Vacant Englobo Residential Subdivisional Land' and lu_desc != 'Vacant Land mining unspecified'  and lu_desc != 'Vacant Residential Home Site / Surveyed Lot']]>
+			</attribtue_filter>
+			<spatial_filter>
+				<![CDATA[]]>
+			</spatial_filter>
+			</Filter>
+		</Node>
+		<Node>
+			<ClassName value="GDALImportData"/>
+			<UUID value="36909552"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="source">
+				<![CDATA[PG:dbname=melbourne host=www.dance4water.org port=5432 user=postgres password=rejudo01]]>
+			</parameter>
+			<parameter name="layer_name">
+				<![CDATA[lga_victoria]]>
+			</parameter>
+			<parameter name="view_name">
+				<![CDATA[council]]>
+			</parameter>
+			<parameter name="import_attribute_as">
+				<![CDATA[]]>
+			</parameter>
+			<parameter name="append">
+				<![CDATA[1]]>
+			</parameter>
+			<parameter name="epsg_from">
+				<![CDATA[4283]]>
+			</parameter>
+			<Filter>
+			<view_name>
+				<![CDATA[]]>
+			</view_name>
+			<attribtue_filter>
+				<![CDATA[lga_name = 'MONASH']]>
+			</attribtue_filter>
+			<spatial_filter>
+				<![CDATA[]]>
+			</spatial_filter>
+			</Filter>
+		</Node>
+		<Node>
+			<ClassName value="GDALSpatialLinking"/>
+			<UUID value="36914256"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="leadingViewName">
+				<![CDATA[council]]>
+			</parameter>
+			<parameter name="linkViewName">
+				<![CDATA[parcel]]>
+			</parameter>
+			<parameter name="withCentroid">
+				<![CDATA[1]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="GDALRemoveComponets"/>
+			<UUID value="36919552"/>
+			<Name value=""/>
+			<GroupUUID value="34928256"/>
+			<DebugMode value="0"/>
+			<parameter name="view_name">
+				<![CDATA[district]]>
+			</parameter>
+			<Filter>
+			<view_name>
+				<![CDATA[district]]>
+			</view_name>
+			<attribtue_filter>
+				<![CDATA[city_id is NULL]]>
+			</attribtue_filter>
+			<spatial_filter>
+				<![CDATA[]]>
+			</spatial_filter>
+			</Filter>
+		</Node>
+		<Node>
+			<ClassName value="DM_SQliteCalculator"/>
+			<UUID value="36925184"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.council]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[STRING]]>
+			</parameter>
+			<parameter name="query">
+				<![CDATA[UPDATE parcel SET council = (SELECT lga_name FROM council WHERE council.OGC_FID = parcel.council_id)]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="GDALAttributeCalculator"/>
+			<UUID value="36930832"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.original_landuse]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[STRING]]>
+			</parameter>
+			<parameter name="equation">
+				<![CDATA[l]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[l*|*parcel.zone_code*||*]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="GDALAttributeCalculator"/>
+			<UUID value="36874816"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.new_landuse]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[STRING]]>
+			</parameter>
+			<parameter name="equation">
+				<![CDATA[l]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[l*|*parcel.zone_code*||*]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="DM_SQliteCalculator"/>
+			<UUID value="36880544"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.max_prob]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[DOUBLE]]>
+			</parameter>
+			<parameter name="query">
+				<![CDATA[UPDATE parcel SET max_prob = max(prob_pond, prob_rg, prob_wetland)]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="DM_SQliteCalculator"/>
+			<UUID value="36885408"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.max_prob_technology]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[STRING]]>
+			</parameter>
+			<parameter name="query">
+				<![CDATA[UPDATE parcel SET max_prob_technology =  CASE 
+WHEN max_prob = prob_rg
+THEN "raingarden"
+WHEN max_prob = prob_wetland
+THEN "wetland"
+WHEN max_prob = prob_pond
+THEN "pond"
+END]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="DM_SQliteCalculator"/>
+			<UUID value="36891968"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.zone_lu]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[STRING]]>
+			</parameter>
+			<parameter name="query">
+				<![CDATA[UPDATE parcel SET zone_lu = (SELECT zone_code || '_' || lu_desc FROM parcel)]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="DM_SQliteCalculator"/>
+			<UUID value="36896928"/>
+			<Name value=""/>
+			<GroupUUID value="0"/>
+			<DebugMode value="0"/>
+			<parameter name="attribute">
+				<![CDATA[parcel.imperviousness_percentage]]>
+			</parameter>
+			<parameter name="attribute_type">
+				<![CDATA[DOUBLE]]>
+			</parameter>
+			<parameter name="query">
+				<![CDATA[UPDATE parcel SET imperviousness_percentage = CASE
+WHEN lu_desc = "Road Void"
+THEN 1
+WHEN area < total_imp
+THEN 1
+ELSE total_imp/area
+END]]>
+			</parameter>
+			<parameter name="variables">
+				<![CDATA[]]>
+			</parameter>
+		</Node>
+		<Node>
+			<ClassName value="GDALRemoveComponets"/>
+			<UUID value="42582656"/>
+			<Name value=""/>
+			<GroupUUID value="34928256"/>
+			<DebugMode value="0"/>
+			<parameter name="view_name">
+				<![CDATA[parcel]]>
+			</parameter>
+			<Filter>
+			<view_name>
+				<![CDATA[parcel]]>
+			</view_name>
+			<attribtue_filter>
+				<![CDATA[area < 2]]>
+			</attribtue_filter>
+			<spatial_filter>
+				<![CDATA[]]>
+			</spatial_filter>
+			</Filter>
+		</Node>
+	</Nodes>
+	<Links>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "34764416"/>
+				<PortName value = "out"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35240176"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "34772832"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35241472"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35494976"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "34772832"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35241472"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "34928256"/>
+				<PortName value = "in"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35525088"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35827968"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35827968"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35246144"/>
+				<PortName value = "in"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35246144"/>
+				<PortName value = "out"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35525088"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35246144"/>
+				<PortName value = "in"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35490144"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36914256"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "36909552"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35490144"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "36919552"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36919552"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35494976"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36925184"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "36914256"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36930832"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "36925184"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36874816"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "36930832"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "34928256"/>
+				<PortName value = "in"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "36874816"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36885408"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "36880544"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36880544"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "34928256"/>
+				<PortName value = "out"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36891968"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "36885408"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35530448"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "34764416"/>
+				<PortName value = "in"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35572224"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35530448"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "35240176"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35572224"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "34764416"/>
+				<PortName value = "in"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "36896928"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36909552"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "34764416"/>
+				<PortName value = "out"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "36896928"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "34927408"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "42582656"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "35246144"/>
+				<PortName value = "out"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "34928256"/>
+				<PortName value = "out"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "42582656"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
+	</Links>
+</DynaMindCore>
+<DynaMindGUI>
+	<GUI_Nodes>
+		<GUI_Node>
+			<GUI_UUID value="34927408"/>
+			<GUI_PosX value="-3.65711e-07"/>
+			<GUI_PosY value="1237.9"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="34764416"/>
+			<GUI_PosX value="1276.41"/>
+			<GUI_PosY value="1215.78"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="35240176"/>
+			<GUI_PosX value="1807.69"/>
+			<GUI_PosY value="340.131"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="35572224"/>
+			<GUI_PosX value="1804.59"/>
+			<GUI_PosY value="181.605"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="35530448"/>
+			<GUI_PosX value="1808.18"/>
+			<GUI_PosY value="1.38341e-15"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="34928256"/>
+			<GUI_PosX value="1726.85"/>
+			<GUI_PosY value="1695.18"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="35494976"/>
+			<GUI_PosX value="1211.51"/>
+			<GUI_PosY value="1226.46"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="34772832"/>
+			<GUI_PosX value="895.65"/>
+			<GUI_PosY value="1205.26"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="35490144"/>
+			<GUI_PosX value="863.307"/>
+			<GUI_PosY value="1377.57"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="35241472"/>
+			<GUI_PosX value="657.337"/>
+			<GUI_PosY value="1225.08"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="35246144"/>
+			<GUI_PosX value="1182.01"/>
+			<GUI_PosY value="1375.97"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="35525088"/>
+			<GUI_PosX value="719.702"/>
+			<GUI_PosY value="228.908"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="35827968"/>
+			<GUI_PosX value="730.382"/>
+			<GUI_PosY value="42.3635"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36909552"/>
+			<GUI_PosX value="1739.25"/>
+			<GUI_PosY value="1208.44"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36914256"/>
+			<GUI_PosX value="1402.96"/>
+			<GUI_PosY value="1350.57"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36919552"/>
+			<GUI_PosX value="621.914"/>
+			<GUI_PosY value="1377.57"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36925184"/>
+			<GUI_PosX value="1388.82"/>
+			<GUI_PosY value="1523.21"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36930832"/>
+			<GUI_PosX value="2233.88"/>
+			<GUI_PosY value="1519.73"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36874816"/>
+			<GUI_PosX value="1399.86"/>
+			<GUI_PosY value="1695.14"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36880544"/>
+			<GUI_PosX value="2043.71"/>
+			<GUI_PosY value="1690.37"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36885408"/>
+			<GUI_PosX value="1394.03"/>
+			<GUI_PosY value="1880.07"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36891968"/>
+			<GUI_PosX value="1849.65"/>
+			<GUI_PosY value="1879.34"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="36896928"/>
+			<GUI_PosX value="775.444"/>
+			<GUI_PosY value="1216.5"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+		<GUI_Node>
+			<GUI_UUID value="42582656"/>
+			<GUI_PosX value="1530.79"/>
+			<GUI_PosY value="1330.2"/>
+			<GUI_Minimized value="0"/>
+		</GUI_Node>
+	</GUI_Nodes>
+</DynaMindGUI>
+</DynaMind>
