@@ -3236,7 +3236,7 @@ SET total_pv_benefits = (SELECT SUM(pv_benefit) FROM parcel WHERE parcel.council
 			</parameter>
 			<parameter name="query">
 				<![CDATA[UPDATE council 
-SET total_npv = (SELECT SUM(total_npv) FROM parcel WHERE parcel.council_id = council.OGC_FID)]]>
+SET total_npv = (SELECT SUM(npv) FROM parcel WHERE parcel.council_id = council.OGC_FID)]]>
 			</parameter>
 			<parameter name="variables">
 				<![CDATA[]]>
@@ -5289,19 +5289,6 @@ SET total_npv = (SELECT SUM(total_npv) FROM parcel WHERE parcel.council_id = cou
 		<Link>
 			<BackLink value = "0"/>
 			<InPort>
-				<UUID value = "45368016"/>
-				<PortName value = "city"/>
-				<PortType value = "0"/>
-			</InPort>
-			<OutPort>
-				<UUID value = "45362480"/>
-				<PortName value = "city"/>
-				<PortType value = "0"/>
-			</OutPort>
-		</Link>
-		<Link>
-			<BackLink value = "0"/>
-			<InPort>
 				<UUID value = "45052832"/>
 				<PortName value = "out"/>
 				<PortType value = "0"/>
@@ -5403,20 +5390,33 @@ SET total_npv = (SELECT SUM(total_npv) FROM parcel WHERE parcel.council_id = cou
 				<PortType value = "0"/>
 			</OutPort>
 		</Link>
+		<Link>
+			<BackLink value = "0"/>
+			<InPort>
+				<UUID value = "45368016"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</InPort>
+			<OutPort>
+				<UUID value = "45362480"/>
+				<PortName value = "city"/>
+				<PortType value = "0"/>
+			</OutPort>
+		</Link>
 	</Links>
 </DynaMindCore>
 <DynaMindGUI>
 	<GUI_Nodes>
 		<GUI_Node>
 			<GUI_UUID value="42005136"/>
-			<GUI_PosX value="1659.28"/>
-			<GUI_PosY value="149.448"/>
+			<GUI_PosX value="1685.43"/>
+			<GUI_PosY value="145.017"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="41452576"/>
 			<GUI_PosX value="2645.52"/>
-			<GUI_PosY value="148.431"/>
+			<GUI_PosY value="149.686"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
@@ -5434,499 +5434,499 @@ SET total_npv = (SELECT SUM(total_npv) FROM parcel WHERE parcel.council_id = cou
 		<GUI_Node>
 			<GUI_UUID value="43241184"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43328176"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43416160"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43422080"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43510672"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43516784"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43523072"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43528336"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43534592"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43536944"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43539760"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43545712"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43552400"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43556912"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43562752"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43653200"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43659632"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43664912"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43671488"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43550912"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43768688"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43775712"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43781840"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43787728"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43793120"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43800384"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43805840"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43810752"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43818400"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43909008"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43915280"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="43921872"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44011904"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44017440"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44008928"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44032000"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44039312"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44044928"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44050976"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44056896"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44062720"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44069088"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44074320"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44079504"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44086032"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44092768"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44098928"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44080688"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44107488"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44113408"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44120160"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44126176"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44217936"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44211968"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44228976"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44255712"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44248464"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44262512"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44268240"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44242448"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44273456"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44285296"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44292032"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44298128"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44279792"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44303808"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44316496"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44309392"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44328976"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44321936"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44323696"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44346816"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44339088"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44358288"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44364352"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44351296"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44376192"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44381504"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44371520"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44393840"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44400208"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44386496"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44411152"/>
 			<GUI_PosX value="2608.03"/>
-			<GUI_PosY value="-2.91708e-07"/>
+			<GUI_PosY value="-1.61716e-07"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
@@ -5938,13 +5938,13 @@ SET total_npv = (SELECT SUM(total_npv) FROM parcel WHERE parcel.council_id = cou
 		<GUI_Node>
 			<GUI_UUID value="44508416"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44501296"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
@@ -5956,55 +5956,55 @@ SET total_npv = (SELECT SUM(total_npv) FROM parcel WHERE parcel.council_id = cou
 		<GUI_Node>
 			<GUI_UUID value="44513872"/>
 			<GUI_PosX value="2399.23"/>
-			<GUI_PosY value="150.501"/>
+			<GUI_PosY value="151.756"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44617648"/>
 			<GUI_PosX value="3252.69"/>
-			<GUI_PosY value="55.1993"/>
+			<GUI_PosY value="56.4552"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44623888"/>
 			<GUI_PosX value="4227.96"/>
-			<GUI_PosY value="260.195"/>
+			<GUI_PosY value="261.451"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44610064"/>
 			<GUI_PosX value="4540.88"/>
-			<GUI_PosY value="260.195"/>
+			<GUI_PosY value="261.451"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44634704"/>
 			<GUI_PosX value="2866.98"/>
-			<GUI_PosY value="222.321"/>
+			<GUI_PosY value="223.577"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44640480"/>
 			<GUI_PosX value="3566.45"/>
-			<GUI_PosY value="53.9837"/>
+			<GUI_PosY value="55.2396"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44646512"/>
 			<GUI_PosX value="2669.15"/>
-			<GUI_PosY value="42.9237"/>
+			<GUI_PosY value="44.1796"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44652528"/>
 			<GUI_PosX value="2957.67"/>
-			<GUI_PosY value="56.0458"/>
+			<GUI_PosY value="57.3017"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44657968"/>
 			<GUI_PosX value="3891.81"/>
-			<GUI_PosY value="71.7914"/>
+			<GUI_PosY value="73.0473"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
@@ -6016,43 +6016,43 @@ SET total_npv = (SELECT SUM(total_npv) FROM parcel WHERE parcel.council_id = cou
 		<GUI_Node>
 			<GUI_UUID value="44671216"/>
 			<GUI_PosX value="4865.5"/>
-			<GUI_PosY value="254.346"/>
+			<GUI_PosY value="255.602"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44761632"/>
 			<GUI_PosX value="1400.43"/>
-			<GUI_PosY value="386.594"/>
+			<GUI_PosY value="387.85"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44754096"/>
 			<GUI_PosX value="1096.1"/>
-			<GUI_PosY value="392.856"/>
+			<GUI_PosY value="394.112"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44765984"/>
 			<GUI_PosX value="2230.75"/>
-			<GUI_PosY value="385.342"/>
+			<GUI_PosY value="386.598"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44774208"/>
 			<GUI_PosX value="2530.07"/>
-			<GUI_PosY value="380.332"/>
+			<GUI_PosY value="381.588"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44769072"/>
 			<GUI_PosX value="3181"/>
-			<GUI_PosY value="236.799"/>
+			<GUI_PosY value="238.055"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44784704"/>
 			<GUI_PosX value="3722.03"/>
-			<GUI_PosY value="257.27"/>
+			<GUI_PosY value="258.526"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
@@ -6064,43 +6064,43 @@ SET total_npv = (SELECT SUM(total_npv) FROM parcel WHERE parcel.council_id = cou
 		<GUI_Node>
 			<GUI_UUID value="44888896"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44895200"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44879824"/>
 			<GUI_PosX value="2866.96"/>
-			<GUI_PosY value="123.596"/>
+			<GUI_PosY value="124.851"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44900096"/>
 			<GUI_PosX value="3679.75"/>
-			<GUI_PosY value="395.361"/>
+			<GUI_PosY value="396.617"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44905600"/>
 			<GUI_PosX value="3138.72"/>
-			<GUI_PosY value="396.613"/>
+			<GUI_PosY value="397.869"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44912048"/>
 			<GUI_PosX value="2835.65"/>
-			<GUI_PosY value="386.594"/>
+			<GUI_PosY value="387.85"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44883264"/>
 			<GUI_PosX value="4514.54"/>
-			<GUI_PosY value="73.5867"/>
+			<GUI_PosY value="74.8426"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
@@ -6117,188 +6117,188 @@ SET total_npv = (SELECT SUM(total_npv) FROM parcel WHERE parcel.council_id = cou
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44951984"/>
-			<GUI_PosX value="3147.66"/>
-			<GUI_PosY value="149.676"/>
+			<GUI_PosX value="3151.43"/>
+			<GUI_PosY value="158.467"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="44958912"/>
-			<GUI_PosX value="2589.02"/>
-			<GUI_PosY value="145.055"/>
+			<GUI_PosX value="2590.28"/>
+			<GUI_PosY value="163.894"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45052832"/>
-			<GUI_PosX value="5304.55"/>
-			<GUI_PosY value="323.936"/>
+			<GUI_PosX value="5305.82"/>
+			<GUI_PosY value="325.191"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45144096"/>
 			<GUI_PosX value="3736.66"/>
-			<GUI_PosY value="326.759"/>
+			<GUI_PosY value="328.014"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45150576"/>
 			<GUI_PosX value="4403.06"/>
-			<GUI_PosY value="323.697"/>
+			<GUI_PosY value="324.952"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45155936"/>
 			<GUI_PosX value="2497.15"/>
-			<GUI_PosY value="217.693"/>
+			<GUI_PosY value="218.948"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45161312"/>
 			<GUI_PosX value="5651.4"/>
-			<GUI_PosY value="231.473"/>
+			<GUI_PosY value="232.728"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45167104"/>
 			<GUI_PosX value="2550.52"/>
-			<GUI_PosY value="402.233"/>
+			<GUI_PosY value="403.488"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45173248"/>
 			<GUI_PosX value="3619.89"/>
-			<GUI_PosY value="213.516"/>
+			<GUI_PosY value="214.771"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45134976"/>
 			<GUI_PosX value="4252.42"/>
-			<GUI_PosY value="398.744"/>
+			<GUI_PosY value="399.999"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45178208"/>
 			<GUI_PosX value="3336.57"/>
-			<GUI_PosY value="405.951"/>
+			<GUI_PosY value="407.206"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45184416"/>
 			<GUI_PosX value="4660.53"/>
-			<GUI_PosY value="223.445"/>
+			<GUI_PosY value="224.7"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45189648"/>
 			<GUI_PosX value="2066.83"/>
-			<GUI_PosY value="323.976"/>
+			<GUI_PosY value="325.231"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45195856"/>
 			<GUI_PosX value="3433.91"/>
-			<GUI_PosY value="327.608"/>
+			<GUI_PosY value="328.863"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45201568"/>
 			<GUI_PosX value="2712.54"/>
-			<GUI_PosY value="328.735"/>
+			<GUI_PosY value="329.99"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45207472"/>
 			<GUI_PosX value="5093.92"/>
-			<GUI_PosY value="250.186"/>
+			<GUI_PosY value="251.442"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45213056"/>
-			<GUI_PosX value="2832.24"/>
-			<GUI_PosY value="144.846"/>
+			<GUI_PosX value="2841.03"/>
+			<GUI_PosY value="158.661"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45303344"/>
 			<GUI_PosX value="1580.35"/>
-			<GUI_PosY value="2375.75"/>
+			<GUI_PosY value="2377"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45309936"/>
 			<GUI_PosX value="1588.77"/>
-			<GUI_PosY value="2576.3"/>
+			<GUI_PosY value="2577.55"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45316080"/>
 			<GUI_PosX value="1.73967e-07"/>
-			<GUI_PosY value="2578.94"/>
+			<GUI_PosY value="2580.19"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45322208"/>
 			<GUI_PosX value="2748.65"/>
-			<GUI_PosY value="2858.88"/>
+			<GUI_PosY value="2860.14"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45328048"/>
 			<GUI_PosX value="2595.88"/>
-			<GUI_PosY value="2577.61"/>
+			<GUI_PosY value="2578.86"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45334208"/>
 			<GUI_PosX value="2998.26"/>
-			<GUI_PosY value="2578.07"/>
+			<GUI_PosY value="2579.32"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45340048"/>
 			<GUI_PosX value="68.4851"/>
-			<GUI_PosY value="2382.49"/>
+			<GUI_PosY value="2383.74"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45346096"/>
 			<GUI_PosX value="2316.51"/>
-			<GUI_PosY value="2375.89"/>
+			<GUI_PosY value="2377.15"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45347344"/>
 			<GUI_PosX value="988.997"/>
-			<GUI_PosY value="2377.95"/>
+			<GUI_PosY value="2379.2"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45353072"/>
 			<GUI_PosX value="2649.67"/>
-			<GUI_PosY value="2370.82"/>
+			<GUI_PosY value="2372.08"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45356784"/>
 			<GUI_PosX value="5101.42"/>
-			<GUI_PosY value="402.8"/>
+			<GUI_PosY value="404.055"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45362480"/>
-			<GUI_PosX value="5962.65"/>
-			<GUI_PosY value="408.413"/>
+			<GUI_PosX value="5823.1"/>
+			<GUI_PosY value="400.518"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="45368016"/>
-			<GUI_PosX value="6722.75"/>
-			<GUI_PosY value="408.206"/>
+			<GUI_PosX value="6589.93"/>
+			<GUI_PosY value="400.086"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
 			<GUI_UUID value="42029584"/>
 			<GUI_PosX value="5523.62"/>
-			<GUI_PosY value="241.086"/>
+			<GUI_PosY value="242.342"/>
 			<GUI_Minimized value="0"/>
 		</GUI_Node>
 		<GUI_Node>
